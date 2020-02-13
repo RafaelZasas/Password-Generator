@@ -9,7 +9,10 @@ class PasswordGenerator:
         self.data_url = url
 
     @staticmethod
-    def generate_password():
+    def generate_password(p_length=10, use_symbols=False):
+        def random_index(x):
+            return random.randint(0, x - 1) # This is to get a random index from a list so we want a value from 0 to (length-1)
+
         lowercase = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't',
                      'u', 'v', 'w', 'x', 'y', 'z']
         uppercase = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T',
@@ -17,20 +20,29 @@ class PasswordGenerator:
         numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
         symbols = ['!', '@', '#', '$', '%', '&', '?']
         password = ''
-        for i in range(10):
-            list_choice = random.randint(0, 3)  # choose a list to select from
+        # Decide whether we want symbols in the password
+        if use_symbols:
+            n = 4
+        else:
+            n = 3
+        for i in range(p_length):
+            list_choice = random_int(n)  # choose a list to select from
 
-            character = {
-                0: lowercase[random.randint(0, 25)],
-                1: uppercase[random.randint(0, 25)],
-                2: numbers[random.randint(0, 9)],
-                3: symbols[random.randint(0, 6)]
-            }
+            # From the chosen list pick a random character
+            if list_choice == 0:
+                character = lowercase[random_index(len(lowercase))]
+            elif list_choice == 1:
+                character = uppercase[random_index(len(uppercase))]
+            elif list_choice == 2:
+                character = numbers[random_index(len(numbers))]
+            elif list_choice == 3:
+                character = symbols[random_index(len(symbols))]
 
-            password += character[list_choice]  # add the random char from random list
+            password += character  # add the random char from random list
 
         return password
 
 
-x = PasswordGenerator()
-print(x.generate_password())
+x = PasswordGenerator("x")
+print(x.generate_password(15, True))
+
