@@ -1,6 +1,6 @@
 import random
 import pandas as pd
-
+import random
 
 class PasswordGenerator:
     data_url = ''
@@ -11,10 +11,14 @@ class PasswordGenerator:
     @staticmethod
     def generate_password(p_length=10, use_symbols=False):
         """
+        Creates a new 10 digit password, symbols optional.
 
-        :param p_length:
-        :param use_symbols:
-        :return:
+        :param
+            p_length (int): length of the password string created
+        :param
+            use_symbols (boolean): are symbols allowed in the string password
+        :return
+            (string): returns unique string password
         """
         def random_index(x):
             return random.randint(0, x - 1) # This is to get a random index from a list so we want a value from 0 to (length-1)
@@ -32,7 +36,7 @@ class PasswordGenerator:
         else:
             n = 3
         for i in range(p_length):
-            list_choice = random_int(n)  # choose a list to select from
+            list_choice = random.randint(n)  # choose a list to select from
 
             # From the chosen list pick a random character
             if list_choice == 0:
@@ -51,4 +55,3 @@ class PasswordGenerator:
 
 x = PasswordGenerator("x")
 print(x.generate_password(15, True))
-
