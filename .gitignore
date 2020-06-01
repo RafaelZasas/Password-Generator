@@ -16,3 +16,6 @@ venv/Include/
 !.vscode/launch.json
 !.vscode/extensions.json
 .history/*
+venv/Scripts/activate
+venv/Scripts/activate.bat
+venv/pyvenv.cfg
