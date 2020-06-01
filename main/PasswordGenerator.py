@@ -53,5 +53,5 @@ class PasswordGenerator:
         return password
 
 
-x = PasswordGenerator("x")
+x = PasswordGenerator("name")
 print(x.generate_password(15, True))
