@@ -36,7 +36,7 @@ class PasswordGenerator:
         else:
             n = 3
         for i in range(p_length):
-            list_choice = random_int(n)  # choose a list to select from
+            list_choice = random.randint(n)  # choose a list to select from
 
             # From the chosen list pick a random character
             if list_choice == 0:
@@ -53,5 +53,5 @@ class PasswordGenerator:
         return password
 
 
-x = PasswordGenerator("x")
+x = PasswordGenerator("name")
 print(x.generate_password(15, True))
