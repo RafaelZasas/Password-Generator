@@ -28,7 +28,6 @@ class PasswordGenerator:
 
         :param use_symbols: (Boolean) Flag whether to use symbols in password generation or not
         :param p_length: (int) length of the password string created
-
         :return
             (string): returns unique string password
         """
@@ -42,9 +41,9 @@ class PasswordGenerator:
         pwd = ''
         # Decide whether we want symbols in the password
         if use_symbols:
-            n = 4
-        else:
             n = 3
+        else:
+            n = 2
         for i in range(p_length):
             list_choice = random.randint(0, n)  # choose a list to select from
 
