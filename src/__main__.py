@@ -1,4 +1,4 @@
-from main import PasswordGenerator
+from src import PasswordGenerator
 
 if __name__ == '__main__':
     func = PasswordGenerator.PasswordGenerator()
