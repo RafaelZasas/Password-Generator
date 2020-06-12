@@ -22,7 +22,7 @@ class PasswordGenerator:
         """
         return random.randint(0, x - 1)
 
-    def generate_password(self, p_length=10, use_symbols=False):
+    def generate_password(self, p_length, use_symbols):
         """
         Creates a new 10 digit password, symbols optional.
 
