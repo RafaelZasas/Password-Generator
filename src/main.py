@@ -10,9 +10,12 @@ class Item(BaseModel):
     is_offer: bool = None
 
 
-@app.get("/")
-def read_root():
-    return {"Hello": "World"}
+@app.get("/", summary="Home dir")
+async def root():
+    """
+    Function to return data on home dir
+    """
+    return {"message": "Hello User"}
 
 
 @app.get("/items/{item_id}")
