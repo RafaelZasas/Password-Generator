@@ -1,4 +1,4 @@
-#Contributing to this project:
+# Contributing to this project:
 
 1. Start by forking the repository
    - Once forked, clone the repo to your pc
