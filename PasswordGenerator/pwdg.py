@@ -11,7 +11,21 @@ class PasswordGenerator:
     data_url = ''
 
     def __init__(self):
-        pass
+        self.lowercase = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't',
+                     'u', 'v', 'w', 'x', 'y', 'z']
+        self.uppercase = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T',
+                     'U', 'V', 'W', 'X', 'Y', 'Z']
+        self.numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+        self.symbols = ['!', '@', '#', '$', '%', '&', '?']
+        self.__pwd = ''
+
+    def getPrivatePassword(self):
+        """
+            Get Private attribute pwd
+            :returns the password
+        """
+        return self.__pwd
+
 
     @staticmethod
     def random_index(x):
@@ -22,7 +36,7 @@ class PasswordGenerator:
         """
         return random.randint(0, x - 1)
 
-    def generate_password(self, p_length, use_symbols):
+    def generate_password(self, p_length=10, use_symbols=True):
         """
         Creates a new 10 digit password, symbols optional.
 
@@ -32,13 +46,7 @@ class PasswordGenerator:
             (string): returns unique string password
         """
 
-        lowercase = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't',
-                     'u', 'v', 'w', 'x', 'y', 'z']
-        uppercase = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T',
-                     'U', 'V', 'W', 'X', 'Y', 'Z']
-        numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
-        symbols = ['!', '@', '#', '$', '%', '&', '?']
-        pwd = ''
+
         # Decide whether we want symbols in the password
         if use_symbols:
             n = 3
@@ -46,17 +54,17 @@ class PasswordGenerator:
             n = 2
         for i in range(p_length):
             list_choice = random.randint(0, n)  # choose a list to select from
-
+            character = ''
             # From the chosen list pick a random character
             if list_choice == 0:
-                character = lowercase[self.random_index(len(lowercase))]
+                character = self.lowercase[self.random_index(len(self.lowercase))]
             elif list_choice == 1:
-                character = uppercase[self.random_index(len(uppercase))]
+                character = self.uppercase[self.random_index(len(self.uppercase))]
             elif list_choice == 2:
-                character = numbers[self.random_index(len(numbers))]
+                character = self.numbers[self.random_index(len(self.numbers))]
             elif list_choice == 3:
-                character = symbols[self.random_index(len(symbols))]
+                character = self.symbols[self.random_index(len(self.symbols))]
 
-            pwd += character  # add the random char from random list
+            self.__pwd += character  # add the random char from random list
 
-        return pwd
+        return self.__pwd
