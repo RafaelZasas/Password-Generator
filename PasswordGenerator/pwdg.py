@@ -1,7 +1,4 @@
 import random
-import pandas as pd
-import random
-
 
 class PasswordGenerator:
     """
@@ -11,20 +8,28 @@ class PasswordGenerator:
     data_url = ''
 
     def __init__(self):
+        """
+            Initialize PasswordGenerator object
+            :lowercase attribute
+            :uppercase attribute
+            :numbers attribute
+            :symbols attribute
+            :password attribute password
+        """
         self.lowercase = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't',
                      'u', 'v', 'w', 'x', 'y', 'z']
         self.uppercase = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T',
                      'U', 'V', 'W', 'X', 'Y', 'Z']
         self.numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
         self.symbols = ['!', '@', '#', '$', '%', '&', '?']
-        self.__pwd = ''
+        self.__password = ''
 
     def getPrivatePassword(self):
         """
             Get Private attribute pwd
-            :returns the password
+            :returns attribute password
         """
-        return self.__pwd
+        return self.__password
 
 
     @staticmethod
@@ -65,6 +70,6 @@ class PasswordGenerator:
             elif list_choice == 3:
                 character = self.symbols[self.random_index(len(self.symbols))]
 
-            self.__pwd += character  # add the random char from random list
+            self.__password += character  # add the random char from random list
 
-        return self.__pwd
+        return self.__password
