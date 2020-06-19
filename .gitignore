@@ -151,6 +151,7 @@ fabric.properties
 ### Python template
 # Byte-compiled / optimized / DLL files
 __pycache__/
+/__pycache__
 *.py[cod]
 *$py.class
 
@@ -603,6 +604,7 @@ paket-files/
 .cr/personal
 
 # Python Tools for Visual Studio (PTVS)
+/__pycache__
 __pycache__/
 *.pyc
 
