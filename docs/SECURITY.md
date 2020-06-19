@@ -2,7 +2,6 @@
 
 ## Supported Versions
 
-Currently only have v1.0
 
 | Version | Supported          |
 | ------- | ------------------ |
@@ -10,5 +9,6 @@ Currently only have v1.0
 
 ## Reporting a Vulnerability
 
-Go to the GIthub Page's Issue Tracker.
+Report vulnerabilities on the projects Github Page under the 
+**Issues** tab.
 

@@ -23,7 +23,7 @@ async def root():
 
 
 @app.get("/password", summary="Get a randomly generated password")
-async def read_item(pwd_length: int, use_symbols: bool):
+async def read_item(pwd_length: int = 5, use_symbols: bool = True):
     """
     Requires Params:<br>
     - pwd_length: (int) Length of password to be generated.
