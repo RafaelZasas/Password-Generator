@@ -25,11 +25,10 @@ class PasswordGenerator:
     def generate_password(self, p_length, use_symbols):
         """
         Creates a new 10 digit password, symbols optional.
-
-        :param use_symbols: (Boolean) Flag whether to use symbols in password generation or not
-        :param p_length: (int) length of the password string created
+        :param p_length: (int) length of the password to be created.
+        :param use_symbols: (Boolean) Flag to use symbols or not in password generation.
         :return
-            (string): returns unique string password
+            (string): unique string password.
         """
 
         lowercase = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't',

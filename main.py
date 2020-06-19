@@ -33,7 +33,7 @@ async def read_item(pwd_length: int, use_symbols: bool):
     - randomly generated password
 
     """
-    print(os.getcwd())
+
     from PasswordGenerator import pwdg
     pwd = pwdg.PasswordGenerator().generate_password(p_length=pwd_length, use_symbols=use_symbols)
     return {"password": pwd}
