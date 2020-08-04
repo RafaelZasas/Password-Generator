@@ -1,5 +1,7 @@
+"""
+    password generation file
+"""
 import random
-import numpy as np
 
 
 class PasswordGenerator:

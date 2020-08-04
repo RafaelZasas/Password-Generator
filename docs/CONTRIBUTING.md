@@ -8,7 +8,7 @@
    - Please make sure to include any unit tests for additional features.
    - Push your local updates to your upstream.
    remote branch (on **your** hosted repo)
-   - start a `Pull Request>` from your remote branch,
+   - start a `Pull Request` from your remote branch,
    to this repo's `<dev>` branch.
    - ***important***: Choose either [@RafaelZasas](https://github.com/RafaelZasas/) or
     [@mattfisc](https://github.com/mattfisc) to review your changes before a
