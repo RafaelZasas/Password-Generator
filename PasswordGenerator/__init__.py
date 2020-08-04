@@ -1,0 +1,4 @@
+"""
+init
+"""
+import PasswordGenerator.pwdg

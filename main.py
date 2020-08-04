@@ -1,11 +1,27 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
-import sys, os
+import sys
+from fastapi.middleware.cors import CORSMiddleware
 
 sys.path.insert(0, '/src')
 sys.path.append('/src')
 
 app = FastAPI()
+
+origins = [
+    "http://localhost.tiangolo.com",
+    "https://localhost.tiangolo.com",
+    "http://localhost",
+    "http://localhost:8080",
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 
 class Item(BaseModel):
@@ -23,7 +39,7 @@ async def root():
 
 
 @app.get("/password", summary="Get a randomly generated password")
-async def read_item(pwd_length: int, use_symbols: bool):
+async def read_item(pwd_length: int = 5, use_symbols: bool = True):
     """
     Requires Params:<br>
     - pwd_length: (int) Length of password to be generated.
@@ -33,7 +49,8 @@ async def read_item(pwd_length: int, use_symbols: bool):
     - randomly generated password
 
     """
-    print(os.getcwd())
+
     from PasswordGenerator import pwdg
     pwd = pwdg.PasswordGenerator().generate_password(p_length=pwd_length, use_symbols=use_symbols)
     return {"password": pwd}
+

@@ -1,5 +1,7 @@
 # Password Manager
-![Python application](https://github.com/RafaelZasas/Password-Generator/workflows/Python%20application/badge.svg?branch=master&event=release)
+
+![Build](https://github.com/RafaelZasas/Password-Generator/workflows/Python%20application/badge.svg?branch=master)
+
 ## What is this all about?
 This is a small scale OSS project for `newbs` like me to practice
 contributing to something that might look cool on a resume.<br>
@@ -19,7 +21,7 @@ to display small python backend functions.
 Please see the [`CONTRIBUTING.md`](docs/CONTRIBUTING.md)
 guidelines before pushing to any branches on this repo.
 
-## #Usage:
+### Usage:
 - see [`FastApi`](https://fastapi.tiangolo.com/) for in depth 
 api details.
 - Ensure you have a *local virtual environment* setup and 
@@ -35,11 +37,12 @@ where you will be greeted with the beautiful **swaggerUI**.
 
 ### Links:
 
-- [FastApi](https://fastapi.tiangolo.com/) documentation for more info.
-
-- [Contributing guidelines](docs/CONTRIBUTING.md) for this project
+- [FastApi](https://fastapi.tiangolo.com/)
 - [The Django Project](https://www.djangoproject.com/) 
 - [Swagger UI](https://github.com/swagger-api/swagger-ui)
+- [Contributing guidelines](docs/CONTRIBUTING.md)
+- [Security](docs/CONTRIBUTING.md)
+- [License](docs/CONTRIBUTING.md)
 
 
 #### Additional info:

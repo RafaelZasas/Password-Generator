@@ -1,25 +1,26 @@
-#Contributing to this project:
+# Contributing Guidelines for this Project
 
-1. Start by forking the repository
-   - Once forked, clone the repo to your pc
-   - make updates on your local branch of choice
+### Styling
+- This project follows the python standards defined by [PEP 8](https://www.python.org/dev/peps/pep-0008/).
+- All methods require docstrings with detailed documentation about params, exceptions and expected return values.
    
-2. Submitting Changes
-   - push your local updates to your corresponding 
+### Submitting Changes
+   - Please make sure to include any unit tests for additional features.
+   - Push your local updates to your upstream.
    remote branch (on **your** hosted repo)
-   - start a `Pull Request>` from your remote branch,
-   to this repo's `<dev>` branch
-   - ***important***: Choose either @RafaelZasas or
-    @mattfisc to review your changes before a
-    merge can be approved.
+   - start a `Pull Request` from your remote branch,
+   to this repo's `<dev>` branch.
+   - ***important***: Choose either [@RafaelZasas](https://github.com/RafaelZasas/) or
+    [@mattfisc](https://github.com/mattfisc) to review your changes before a
+    pull request can be approved.
     
-3. Reviewing changes
-    - If a request for changes is made, review the code and push 
+### Review Process
+ - If a request for changes is made, review the code\, make the changes and push 
     to the same branch that the pull request was started on.<br>
     ***important***: *Please dont start a new pull request for changes
     to open pull requests.*
-    - Once the changes have been approved your branch will be merged 
-    into development.
+ - Once the changes have been approved your branch will be rebased or merged into the development branch.
+ 
    
 
    
