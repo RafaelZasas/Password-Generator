@@ -1,5 +1,6 @@
-import random
-import pandas as pd
+"""
+    password generation file
+"""
 import random
 
 

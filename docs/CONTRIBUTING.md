@@ -7,11 +7,11 @@
 2. Submitting Changes
    - push your local updates to your corresponding 
    remote branch (on **your** hosted repo)
-   - start a `Pull Request>` from your remote branch,
-   to this repo's `<dev>` branch
-   - ***important***: Choose either @RafaelZasas or
-    @mattfisc to review your changes before a
-    merge can be approved.
+   - start a `Pull Request` from your remote branch,
+   to this repo's `<dev>` branch.
+   - ***important***: Choose either [@RafaelZasas](https://github.com/RafaelZasas/) or
+    [@mattfisc](https://github.com/mattfisc) to review your changes before a
+    pull request can be approved.
     
 3. Reviewing changes
     - If a request for changes is made, review the code and push 
