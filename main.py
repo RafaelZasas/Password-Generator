@@ -41,7 +41,7 @@ async def root():
 
 
 @app.get("/password", summary="Get a randomly generated password")
-async def read_item(pwd_length: int = 5, use_symbols: bool = True, strange_header: [str] = Header(None)):
+async def read_item(pwd_length: int = 5, use_symbols: bool = True, strange_header: str = Header(None)):
     """
     Requires Params:<br>
     - pwd_length: (int) Length of password to be generated.
@@ -55,4 +55,3 @@ async def read_item(pwd_length: int = 5, use_symbols: bool = True, strange_heade
     from PasswordGenerator import pwdg
     pwd = pwdg.PasswordGenerator().generate_password(p_length=pwd_length, use_symbols=use_symbols)
     return {"password": pwd}
-
