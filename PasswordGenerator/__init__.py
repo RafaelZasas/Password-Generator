@@ -1,4 +1,0 @@
-"""
-init
-"""
-import PasswordGenerator.pwdg
