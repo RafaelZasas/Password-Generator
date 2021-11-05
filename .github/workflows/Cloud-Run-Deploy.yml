@@ -8,7 +8,7 @@ on:
 env:
   PROJECT_ID: ${{ secrets.GCP_PROJECT }}
   SERVICE_ACCOUNT_KEY: ${{ secrets.SERVICE_ACCOUNT_KEY }}
-  SERVICE: hello-cloud-run # Necessary when not using a service.yml to describe sys requirements
+  SERVICE: ${{ secrets.SERVICE_NAME }} # Necessary when not using a service.yml to describe sys requirements
   REGION: us-central1
 
 jobs:
