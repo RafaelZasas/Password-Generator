@@ -1,11 +1,14 @@
+"""
+Main file which will be ran by docker
+"""
 from fastapi import FastAPI, Header
-from pydantic import BaseModel
+from typing import Optional
 import sys
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 
-sys.path.insert(0, '/src')
-sys.path.append('/src')
+sys.path.insert(0, '../../src')
+sys.path.append('../../src')
 
 app = FastAPI()
 
@@ -28,12 +31,6 @@ app.add_middleware(
 )
 
 
-class Item(BaseModel):
-    name: str
-    price: float
-    is_offer: bool = None
-
-
 @app.get("/", summary="Home dir")
 async def root():
     """
@@ -43,7 +40,10 @@ async def root():
 
 
 @app.get("/password", summary="Get a randomly generated password")
-async def read_item(pwd_length: int = 5, use_symbols: bool = True, use_numbers: bool = False, use_letters: bool = False,
+async def read_item(pwd_length: Optional[int] = 5,
+                    use_symbols: Optional[bool] = True,
+                    use_numbers: Optional[bool] = True,
+                    use_letters: Optional[bool] = True,
                     strange_header: str = Header(None)) -> JSONResponse:
     """
     Requires Params:<br>
@@ -57,7 +57,7 @@ async def read_item(pwd_length: int = 5, use_symbols: bool = True, use_numbers: 
 
     """
 
-    from PasswordGenerator import pwdg
+    from app.PasswordGenerator import pwdg
     pwd = pwdg.PasswordGenerator().generate_password(p_length=pwd_length, use_symbols=use_symbols, use_numbers=use_numbers, use_letters=use_letters)
     response = {"password": pwd}
     return JSONResponse(response)

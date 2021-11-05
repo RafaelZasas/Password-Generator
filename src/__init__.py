@@ -1,4 +1,0 @@
-"""
-init method
-"""
-import PasswordGenerator

@@ -2,7 +2,7 @@
 """
 Tests the generate_password() function within password generator
 """
-from PasswordGenerator.pwdg import PasswordGenerator
+from app.PasswordGenerator.pwdg import PasswordGenerator
 import unittest
 
 
