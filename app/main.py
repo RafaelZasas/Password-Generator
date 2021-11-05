@@ -1,6 +1,3 @@
-"""
-Main file which will be ran by docker
-"""
 from fastapi import FastAPI, Header
 from typing import Optional
 import sys
@@ -12,7 +9,41 @@ from starlette.exceptions import HTTPException as StarletteHTTPException
 sys.path.insert(0, '../../src')
 sys.path.append('../../src')
 
-app = FastAPI()
+
+description = """
+Random Password Generator API. 🚀
+## Endpoints
+* **password**
+
+You can request a random **password** and tweak it with custom parameters.
+"""
+
+tags_metadata = [
+    {
+        "name": "Views",
+        "description": "Non-endpoint pages",
+    },
+    {
+        "name": "Password Generators",
+        "description": "Random Password Generators",
+    },
+]
+
+app = FastAPI(
+    title="Password Generator",
+    description=description,
+    version="0.1.0",
+    terms_of_service="http://rtx.rafaelzasas.com",
+    contact={
+        "name": "Rafael Zasas",
+        "url": "https://rtx.rafaelzasas.com/",
+        "email": "admin@rafaelzasas.com",
+    },
+    license_info={
+        "name": "Apache 2.0",
+        "url": "https://www.apache.org/licenses/LICENSE-2.0.html",
+    }, openapi_tags=tags_metadata
+)
 
 origins = [
     "http://localhost.tiangolo.com",
@@ -37,7 +68,7 @@ async def custom_http_exception_handler(request, exc):
     return RedirectResponse("/404")
 
 
-@app.get("/404", summary="404 - Not Found")
+@app.get("/404", summary="Page Not Found", tags=['Views'])
 async def root():
     """
         404 - Page Not Found. Non existent entrypoints will redirect here.
@@ -88,7 +119,7 @@ async def root():
     return HTMLResponse(content=html_content, status_code=200)
 
 
-@app.get("/password", summary="Get a randomly generated password")
+@app.get("/password", summary="Get a randomly generated password", tags=['Password Generators'])
 async def read_item(pwd_length: Optional[int] = 5,
                     use_symbols: Optional[bool] = True,
                     use_numbers: Optional[bool] = True,
