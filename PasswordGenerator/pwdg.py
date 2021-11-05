@@ -14,13 +14,19 @@ class PasswordGenerator:
         pass
 
     @staticmethod
-    def generate_password(p_length=10, use_symbols=False):
+    def generate_password(p_length=10, use_symbols=False, use_numbers=False, use_letters=False):
         """
         Creates a new 10 digit password, symbols optional.
-        :param p_length: (int) length of the password to be created.
-        :param use_symbols: (Boolean) Flag to use symbols or not in password generation.
+
         :return
             (string): unique string password.
+
+        Args:
+            use_numbers: (Boolean) Flag to use numbers or not in password generation.
+
+            use_letters: (Boolean) Flag to use letters or not in password generation.
+            use_symbols: (Boolean) Flag to use symbols or not in password generation.
+            p_length: (int) length of the password to be created.
         """
 
         characters = {
@@ -34,12 +40,23 @@ class PasswordGenerator:
 
         pwd = ''
 
-        for i in range(p_length):  # one iteration per password char
-            if use_symbols:
-                list_choice = random.choice(list(characters))  # choose a list randomly from the dict keys
-            else:
-                list_choice = random.choice(list(characters)[:-1])  # dont include symbols list
+        chosen_characters = []  # add all the characters that the user chose to a new list
 
-            pwd += random.choice(list(characters[list_choice]))  # append a random char from the chosen list to pwd
+        # use extend to add the list values to the new list
+        if use_letters:
+            chosen_characters.extend(characters['lowercase'])
+            chosen_characters.extend(characters['uppercase'])
+
+        if use_numbers:
+            chosen_characters.extend(characters['numbers'])
+
+        if use_symbols:
+            chosen_characters.extend(characters['symbols'])
+
+        if not use_symbols and not use_letters and not use_numbers:
+            return "password is password :)"
+
+        for i in range(p_length):  # one iteration per password char
+            pwd += random.choice(chosen_characters)
 
         return pwd

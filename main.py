@@ -2,6 +2,7 @@ from fastapi import FastAPI, Header
 from pydantic import BaseModel
 import sys
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import JSONResponse
 
 sys.path.insert(0, '/src')
 sys.path.append('/src')
@@ -23,6 +24,7 @@ app.add_middleware(
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
+    expose_headers=["*"]
 )
 
 
@@ -41,10 +43,13 @@ async def root():
 
 
 @app.get("/password", summary="Get a randomly generated password")
-async def read_item(pwd_length: int = 5, use_symbols: bool = True, strange_header: [str] = Header(None)):
+async def read_item(pwd_length: int = 5, use_symbols: bool = True, use_numbers: bool = False, use_letters: bool = False,
+                    strange_header: str = Header(None)) -> JSONResponse:
     """
     Requires Params:<br>
     - pwd_length: (int) Length of password to be generated.
+    - use_symbols: (bool) Whether or not to use symbols in pwd generation
+    - use_symbols: (bool) Whether or not to use symbols in pwd generation
     - use_symbols: (bool) Whether or not to use symbols in pwd generation
 
     Returns:<br>
@@ -53,6 +58,6 @@ async def read_item(pwd_length: int = 5, use_symbols: bool = True, strange_heade
     """
 
     from PasswordGenerator import pwdg
-    pwd = pwdg.PasswordGenerator().generate_password(p_length=pwd_length, use_symbols=use_symbols)
-    return {"password": pwd}
-
+    pwd = pwdg.PasswordGenerator().generate_password(p_length=pwd_length, use_symbols=use_symbols, use_numbers=use_numbers, use_letters=use_letters)
+    response = {"password": pwd}
+    return JSONResponse(response)

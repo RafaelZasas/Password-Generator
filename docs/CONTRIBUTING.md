@@ -10,8 +10,7 @@
    remote branch (on **your** hosted repo)
    - start a `Pull Request` from your remote branch,
    to this repo's `<dev>` branch.
-   - ***important***: Choose either [@RafaelZasas](https://github.com/RafaelZasas/) or
-    [@mattfisc](https://github.com/mattfisc) to review your changes before a
+   - ***important***: Select Me: [@RafaelZasas](https://github.com/RafaelZasas/) to review your changes before a
     pull request can be approved.
     
 ### Review Process

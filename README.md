@@ -1,23 +1,28 @@
-# Password Manager
+# Password Manager 🗃
 
-![Build](https://github.com/RafaelZasas/Password-Generator/workflows/Python%20application/badge.svg?branch=master)
+[![Stars](https://img.shields.io/github/stars/RafaelZasas/Password-Generator.svg)](https://github.com/RafaelZasas/Raff-App.git/stargazers)
+[![Forks](https://img.shields.io/github/forks/RafaelZasas/Password-Generator.svg)](https://github.com/RafaelZasas/Raff-App.git/network/members)
+[![Build](https://github.com/RafaelZasas/Password-Generator/workflows/Password%20Generator/badge.svg)](https://github.com/RafaelZasas/Raff-App.git/)
 
-## What is this all about?
+
+[![Issues](https://img.shields.io/github/issues/RafaelZasas/Raff-App.svg)](https://github.com/RafaelZasas/Raff-App.git/issues)
+[![License](https://img.shields.io/github/license/RafaelZasas/Raff-App.svg)](https://opensource.org/licenses/MIT)
+## What is this all about? 💬
 This is a small scale OSS project for `newbs` like me to practice
-contributing to something that might look cool on a resume.<br>
-I'd like to have an API that can be used within websites 
-to display small python backend functions.
+with and make something that might look cool on a resume 📝.<br>
+
 
 
 ## What you need to know:
 - This app is written in Python 3.8. 
 - Main purpose of this program \[currently\] is to act as a
- web integrated, random password generator.
+ web integrated and mobile, random password generator. (Just for fun why not? 🙈)
+ An example can be found on my [website]
  
-- We've chosen to use [`FastApi`](https://fastapi.tiangolo.com/) as our API framework
-  for the backend python functionality.
+- I've chosen to use [`FastApi`](https://fastapi.tiangolo.com/) as our API framework
+  for the backend python functionality. but at some point Id like to make a [GraphQl](https://graphql.org/) version too. (Maybe someone can commit? 👥)
 
-- ***<span style="color:red; ">Really Important:</span>***
+- ***<span style="color:red; ">Important 💥</span>***
 Please see the [`CONTRIBUTING.md`](docs/CONTRIBUTING.md)
 guidelines before pushing to any branches on this repo.
 
@@ -28,14 +33,14 @@ api details.
 `pip install requirements`.
 - navigate to the **src** folder and run the following command:
     - `uvicorn main:app --reload`
-- This will start a locally hosted server at **http://127.0.0.1:8000/**
+- This will start a locally hosted server at **[http://127.0.0.1:8000/](http://127.0.0.1:8000/)**
 - you can then make requests to the api by specifying a url with 
 parameters if need be.
 - To see what requests can be made navigate to the `/docs` page
 where you will be greeted with the beautiful **swaggerUI**.
 
 
-### Links:
+### References:
 
 - [FastApi](https://fastapi.tiangolo.com/)
 - [The Django Project](https://www.djangoproject.com/) 
@@ -45,9 +50,3 @@ where you will be greeted with the beautiful **swaggerUI**.
 - [License](docs/CONTRIBUTING.md)
 
 
-#### Additional info:
-- Why not use Django?
-    <p>Django is a complicated framework to learn 
-    and use in itself, has features
-     we don't need and doesn't come 
-     with a cool Swagger UI.</p>
