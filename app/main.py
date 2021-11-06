@@ -1,14 +1,9 @@
 from fastapi import FastAPI, Header
 from typing import Optional
-import sys
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse, HTMLResponse, RedirectResponse
 from starlette.exceptions import HTTPException as StarletteHTTPException
-
-
-sys.path.insert(0, '../../src')
-sys.path.append('../../src')
-
+from app.PasswordGenerator import pwdg
 
 description = """
 Random Password Generator API. 🚀
@@ -137,8 +132,8 @@ async def read_item(pwd_length: Optional[int] = 5,
 
     """
 
-    from app.PasswordGenerator import pwdg
-    pwd = pwdg.PasswordGenerator().generate_password(p_length=pwd_length, use_symbols=use_symbols,
+    generator = pwdg.PasswordGenerator()
+    pwd = generator.generate_password(p_length=pwd_length, use_symbols=use_symbols,
                                                      use_numbers=use_numbers, use_letters=use_letters)
     response = {"password": pwd}
     return JSONResponse(response)

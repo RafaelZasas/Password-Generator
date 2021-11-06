@@ -15,6 +15,9 @@ COPY ./requirements.txt /app/requirements.txt
 
 RUN /usr/local/bin/python -m pip install --upgrade pip
 
+# Install local Password Generator module
+RUN pip install .
+
 RUN pip install --no-cache-dir -r /app/requirements.txt
 
 WORKDIR /app
