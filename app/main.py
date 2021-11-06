@@ -3,7 +3,7 @@ from typing import Optional
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse, HTMLResponse, RedirectResponse
 from starlette.exceptions import HTTPException as StarletteHTTPException
-from app.PasswordGenerator import pwdg
+from PasswordGenerator import pwdg
 
 description = """
 Random Password Generator API. 🚀
