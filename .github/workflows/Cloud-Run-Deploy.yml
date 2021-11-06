@@ -7,8 +7,8 @@ on:
 
 env:
   PROJECT_ID: ${{ secrets.GCP_PROJECT }}
-  SERVICE_ACCOUNT_KEY: ${{ secrets.GCP_SA_KEY }}
-  SERVICE: hello-cloud-run # Necessary when not using a service.yml to describe sys requirements
+  SERVICE_ACCOUNT_KEY: ${{ secrets.SERVICE_ACCOUNT_KEY }}
+  SERVICE: ${{ secrets.SERVICE_NAME }} # Necessary when not using a service.yml to describe sys requirements
   REGION: us-central1
 
 jobs:
@@ -30,7 +30,7 @@ jobs:
 
     - name: Build and Push Container
       run: |-
-        docker build -t gcr.io/${{ env.PROJECT_ID }}/${{ env.SERVICE }}:${{  github.sha }} example-app/
+        docker build -t gcr.io/${{ env.PROJECT_ID }}/${{ env.SERVICE }}:${{  github.sha }} ./
         docker push gcr.io/${{ env.PROJECT_ID }}/${{ env.SERVICE }}:${{  github.sha }}
 
     - name: Deploy to Cloud Run

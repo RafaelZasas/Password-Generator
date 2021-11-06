@@ -2,9 +2,9 @@
 
 [![Stars](https://img.shields.io/github/stars/RafaelZasas/Password-Generator.svg)](https://github.com/RafaelZasas/Raff-App.git/stargazers)
 [![Forks](https://img.shields.io/github/forks/RafaelZasas/Password-Generator.svg)](https://github.com/RafaelZasas/Raff-App.git/network/members)
-[![Build](https://github.com/RafaelZasas/Password-Generator/workflows/Password%20Generator/badge.svg)](https://github.com/RafaelZasas/Raff-App.git/)
 
-
+[![Lint & Test](https://github.com/RafaelZasas/Password-Generator/actions/workflows/Test.yml/badge.svg)](https://github.com/RafaelZasas/Password-Generator/actions/workflows/Test.yml)
+[![Deploy to Cloud Run](https://github.com/RafaelZasas/Password-Generator/actions/workflows/Cloud-Run-Deploy.yml/badge.svg)](https://github.com/RafaelZasas/Password-Generator/actions/workflows/Cloud-Run-Deploy.yml)
 [![Issues](https://img.shields.io/github/issues/RafaelZasas/Raff-App.svg)](https://github.com/RafaelZasas/Raff-App.git/issues)
 [![License](https://img.shields.io/github/license/RafaelZasas/Raff-App.svg)](https://opensource.org/licenses/MIT)
 ## What is this all about? 💬
