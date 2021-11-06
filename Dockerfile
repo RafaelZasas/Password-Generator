@@ -12,6 +12,7 @@ ENV PYTHONUNBUFFERED=1
 
 # Install pip requirements
 COPY ./requirements.txt /app/requirements.txt
+COPY ./setup.py /app/setup.py
 
 RUN /usr/local/bin/python -m pip install --upgrade pip
 
